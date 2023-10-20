@@ -1,0 +1,46 @@
+* {
+    background-color: #d2d2d2;
+    margin: 10px 5px;
+    max-width: 40vw;
+    max-height: 100vh;
+}
+
+ul > li {
+    list-style-type: square;
+}
+
+#no-bullet {
+    list-style-type: none;
+}
+
+form:not(#enterMsg) {
+    display: block;
+}
+#enterMsg {
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: rgb(50, 50, 50);
+    color: #eee;
+    border: none;
+    box-shadow: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+a:hover {
+    color: darkblue;
+}
+
+#indent {
+    padding-left: 30px;
+}
+
+#divider {
+    border-bottom: black 4px dotted;
+}
+

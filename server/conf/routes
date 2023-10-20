@@ -5,6 +5,22 @@
 # Home page
 GET        /                             controllers.Application.index
 
+
+GET        /login1                       controllers.SharedMessages1.login
+
+POST       /validate1                    controllers.SharedMessages1.validateLoginPost
+
+POST       /createUser1                  controllers.SharedMessages1.createUser
+GET        /logout1                      controllers.SharedMessages1.logout     
+
+GET        /messages                    controllers.SharedMessages1.messages
+
+POST       /addPrivateMessage            controllers.SharedMessages1.addPrivateMessage
+POST       /addGeneralMessage           controllers.SharedMessages1.addGeneralMessage
+
+
+
+
 # Prefix must match `play.assets.urlPrefix`
 GET        /assets/*file                 controllers.Assets.at(file)
 GET        /versionedAssets/*file        controllers.Assets.versioned(path="/public", file: Asset)

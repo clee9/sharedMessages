@@ -1,0 +1,47 @@
+@(pmsgs: Seq[(String,String)], gmsgs: Seq[(String, String)])()(implicit request: RequestHeader, flash: Flash)
+
+@main("Messages") {
+    <div id="divider">
+
+        <h2>General Messages</h2>
+        <p>From: </p>
+        <ul>
+            @for((from, msg) <- gmsgs) {
+                <span>
+                <li>@from says:</li>
+                <p id="indent">"@msg"</p>
+                </span>
+            }
+        </ul>
+        <form method="post" action="@routes.SharedMessages1.addGeneralMessage" id="enterMsg">
+            @helper.CSRF.formField
+            <p>Say a message:</p>
+            <input type="text" name="newGeneralMessage" placeholder="type here"></input>
+            <input type="submit"></input>
+        </form>
+    </div>
+    <div>
+        <h2>Personal Messages</h2>
+        <p>From: </p>
+        <ul>
+            @for((from, msg) <- pmsgs) {
+                <li>@from says:</li>
+                <p id="indent">"@msg"</p>
+            }
+        </ul>
+        <form method="post" action="@routes.SharedMessages1.addPrivateMessage" id="enterMsg">
+            @helper.CSRF.formField
+            <p>Send to who?</p>
+            <input type="text" name="whoTo" placeholder="Enter a user"/>
+            <p>Enter message:</p>
+            <input type="text" name="newMessage" placeholder="type a message"></input>
+            <input type="submit"></input>
+        </form>
+    </div>
+
+  
+
+    <div>
+        <a href="@routes.SharedMessages1.logout">Logout</a>
+    </div>
+}
