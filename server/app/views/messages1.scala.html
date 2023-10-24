@@ -8,8 +8,8 @@
         <ul>
             @for((from, msg) <- gmsgs) {
                 <span>
-                <li>@from says:</li>
-                <p id="indent">"@msg"</p>
+                <li id ="gen">@from says:</li>
+                <p id="indent" name="gen">@msg</p>
                 </span>
             }
         </ul>
@@ -25,8 +25,8 @@
         <p>From: </p>
         <ul>
             @for((from, msg) <- pmsgs) {
-                <li>@from says:</li>
-                <p id="indent">"@msg"</p>
+                <li id="pers">@from says:</li>
+                <p id="indent" name="pers">"@msg"</p>
             }
         </ul>
         <form method="post" action="@routes.SharedMessages1.addPrivateMessage" id="enterMsg">

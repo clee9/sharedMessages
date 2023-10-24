@@ -5,16 +5,16 @@
 
     <form method="post" action="@routes.SharedMessages1.validateLoginPost" id="username">
         @helper.CSRF.formField
-        Username: <input type="text" name="username"></input>
-        Password: <input type="password" name="password"></input>
+        Username: <input type="text" name="username" id="username-login"></input>
+        Password: <input type="password" name="password" id="password-login"></input>
         <input type="submit"></input>
     </form>
 
     <form method="post" action="@routes.SharedMessages1.createUser" id="password">
         @helper.CSRF.formField
         <h3>Create User</h3>
-        Username: <input type="text" name="username"></input>
-        Password: <input type="password" name="password"></input>
+        Username: <input type="text" name="username" id="username-create"></input>
+        Password: <input type="password" name="password" id="password-create"></input>
         <input type="submit"></input>
     </form>
 }

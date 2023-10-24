@@ -78,16 +78,4 @@ class SharedMessages1 @Inject()(cc: ControllerComponents) extends AbstractContro
             }.getOrElse(Redirect(routes.SharedMessages1.messages))
         }.getOrElse(Redirect(routes.SharedMessages1.login))
     }
-
-    // def deleteMessage = Action { implicit request =>
-    //     val usernameOption = request.session.get("username")
-    //     usernameOption.map { username =>
-    //         val postVals = request.body.asFormUrlEncoded
-    //         postVals.map { args => 
-    //             val index = args("index").head.toInt
-    //             SharedMessagesMemoryModel.removeMessage(username, index)
-    //             Redirect(routes.SharedMessages1.messages)
-    //         }.getOrElse(Redirect(routes.SharedMessages1.messages))
-    //     }.getOrElse(Redirect(routes.SharedMessages1.login))
-    // }
 }

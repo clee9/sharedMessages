@@ -61,3 +61,4 @@ lazy val commonSettings = Seq(
 
 // loads the server project at sbt startup
 onLoad in Global := (onLoad in Global).value andThen {s: State => "project server" :: s}
+
